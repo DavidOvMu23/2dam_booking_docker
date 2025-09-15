@@ -9,13 +9,13 @@ services:
     working_dir: /web
     command: pm2-runtime start pm2.json
     volumes:
-      - ./2dam-booking:/web
+      - ./2dam_booking:/web
     environment:
       - TZ=Europe/Berlin
     restart: always
   database:
     image: yobasystems/alpine-mariadb:11.4.5
-    container_name:  2dam-booking-db
+    container_name: 2dam-booking-db
     ports:
       - "2222:3306"
     restart: always
@@ -26,4 +26,4 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=Europe/Berlin
     volumes:
-     - ./data/db/mysql:/var/lib/mysql
+      - ./data/db/mysql:/var/lib/mysql
