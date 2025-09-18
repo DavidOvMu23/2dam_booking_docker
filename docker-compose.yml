@@ -8,8 +8,6 @@ services:
     container_name: 2dam-booking-webserver
     working_dir: /web
     command: pm2-runtime start pm2.json
-    volumes:
-      - ./2dam_booking:/web
     environment:
       - TZ=Europe/Berlin
     restart: always
